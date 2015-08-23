@@ -13,14 +13,14 @@
         <th>Title</th>
         <th>Cuisine</th>
         <th>Mealtype</th>
-        <th>Occassion</th>
+        <th>Event</th>
         <th>Description</th>
         <th>Actions</th>
       </tr>
 
       <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.image %></td>
+        <td><img src="<%= recipe.image %>" class="img-responsive"></td>
         <td><%= recipe.title %></td>
         <td><%= recipe.cuisine %></td>
         <td><%= recipe.mealtype %></td>

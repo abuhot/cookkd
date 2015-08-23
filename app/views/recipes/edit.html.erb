@@ -9,12 +9,12 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Your<%= @recipe.title %> Recipe</h3>
+  <h3>Edit Your <%= @recipe.title %> Recipe</h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/update_recipe/<%= @recipe.id %>" method="post">
+    <form action="/update_recipe/<%= @recipe.id %>" method="post" enctype="multipart/form-data">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -52,7 +52,7 @@
       <!-- Label and input for occassion -->
       <div class="form-group">
         <label for="occassion" class="control-label">
-          Occassion
+          Event
         </label>
 
         <input type="text" id="occassion" name="occassion" placeholder="Occassion" class="form-control" value="<%= @recipe.occassion %>">
@@ -94,7 +94,7 @@
           Image
         </label>
 
-        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @recipe.image %>">
+        <input type="file" id="image" name="image" placeholder="Image" class="form-control" value="<%= @recipe.image %>">
       </div>
 
       <button class="btn btn-warning">
