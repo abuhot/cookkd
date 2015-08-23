@@ -1,8 +1,10 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
-
   def index
-    @recipes = current_user.recipes
+    @r = current_user.recipes
+    @q = @r.ransack(params[:q])
+    @recipes = @q.result
+
   end
 
   def show
