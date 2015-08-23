@@ -10,18 +10,15 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Friend</th>
-        <th>User</th>
         <th>Actions</th>
       </tr>
 
       <% @friends.each do |friend| %>
       <tr>
-        <td><%= friend.friend_id %></td>
-        <td><%= friend.user_id %></td>
+        <td><%= friend.user.firstname + " " + friend.user.lastname %></td>
         <td>
-          <a href="/friends/<%= friend.id %>" class="btn btn-primary">Show</a>
-          <a href="/friends/<%= friend.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_friend/<%= friend.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/friends/recipes/<%= friend.user.id %>" class="btn btn-primary">Recipes</a>
+          <a href="/delete_friend/<%= friend.id %>" class="btn btn-danger" rel="nofollow">Remove Friend</a>
         </td>
       </tr>
       <% end %>

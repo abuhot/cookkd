@@ -1,10 +1,20 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
   def index
+
+    if params[:id].present?
+
+      @r = Recipe.where({:user_id => params[:id]})
+      @q = @r.ransack(params[:q])
+      @recipes = @q.result
+
+    else
+
     @r = current_user.recipes
     @q = @r.ransack(params[:q])
     @recipes = @q.result
 
+    end
   end
 
   def show

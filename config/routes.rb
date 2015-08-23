@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   # READ
   get "/recipes", :controller => "recipes", :action => "index"
   get "/recipes/:id", :controller => "recipes", :action => "show"
+  get "/friends/recipes/:id", :controller => "recipes", :action => "index"
+
 
   # UPDATE
   get "/recipes/:id/edit", :controller => "recipes", :action => "edit"

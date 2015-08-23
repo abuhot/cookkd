@@ -24,17 +24,11 @@
           Friend
         </label>
 
-        <input type="text" id="friend_id" name="friend_id" placeholder="Friend" class="form-control" value="<%= @friend.friend_id %>">
+        <%= select_tag :friend_id, options_from_collection_for_select(User.all.order("lastname ASC"), :id, :lastname), :class => "form-control" %>
       </div>
 
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @friend.user_id %>">
-      </div>
+       <!-- Label and input for user_id -->
+       <input name="user_id" type="hidden" value="<%= current_user.id %>">
 
       <button class="btn btn-success">
         Create Friend

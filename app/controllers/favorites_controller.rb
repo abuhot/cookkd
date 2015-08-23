@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
   end
 
   def show
@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
     @favorite.user_id = params[:user_id]
 
     if @favorite.save
-      redirect_to "/favorites", :notice => "Favorite created successfully."
+      redirect_to "/recipes", :notice => "Favorite created successfully."
     else
       render 'new'
     end
@@ -45,6 +45,6 @@ class FavoritesController < ApplicationController
 
     @favorite.destroy
 
-    redirect_to "/favorites", :notice => "Favorite deleted."
+    redirect_to "/recipes", :notice => "Favorite deleted."
   end
 end
