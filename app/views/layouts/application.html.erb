@@ -47,8 +47,12 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/edit"><i class="fa fa-user"></i> Edit Your Profile</a></li>
-          <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Dummy Sign Out Link</a></li>
+        <% if user_signed_in? %>
+          <li><a href="/users/edit"><i class="fa fa-user"></i> <%= current_user.firstname + " " +current_user.lastname %> </a></li>
+          <% else %>
+          <li><a href="/users/edit"><i class="fa fa-user"></i> Your Profile </a></li>
+          <% end %>
+          <li><a href="/users/sign_out" data-method="delete" rel="nofollow"><i class="fa fa-sign-out"></i> Sign Out</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>

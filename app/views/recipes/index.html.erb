@@ -9,31 +9,24 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User</th>
-        <th>Occassion</th>
-        <th>Rating</th>
-        <th>Image</th>
-        <th>Preparation</th>
-        <th>Ingridients</th>
-        <th>Description</th>
-        <th>Mealtype</th>
-        <th>Cuisine</th>
+        <th></th>
         <th>Title</th>
+        <th>Cuisine</th>
+        <th>Mealtype</th>
+        <th>Occassion</th>
+        <th>Description</th>
         <th>Actions</th>
       </tr>
 
       <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.user_id %></td>
-        <td><%= recipe.occassion %></td>
-        <td><%= recipe.rating %></td>
         <td><%= recipe.image %></td>
-        <td><%= recipe.preparation %></td>
-        <td><%= recipe.ingridients %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.mealtype %></td>
-        <td><%= recipe.cuisine %></td>
         <td><%= recipe.title %></td>
+        <td><%= recipe.cuisine %></td>
+        <td><%= recipe.mealtype %></td>
+        <td><%= recipe.occassion %></td>
+        <td><%= recipe.description %></td>
+
         <td>
           <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">Show</a>
           <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>
