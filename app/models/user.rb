@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
     has_many :friends
     has_many :favorites
     has_many :recipes
+
+    def fullname
+      return self.firstname + " " + self.lastname
+    end
 end

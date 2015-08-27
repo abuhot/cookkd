@@ -1,26 +1,36 @@
+<div class="jumbotron background">
+<div class="label label-default lead" align="left">
+  <h2><strong>Cookkd - Cook Socially</strong></h2>
+  <h2></h2>
+  <h2></h2>
+  <h2>Discover & Share Your Favorite Recipes</h2>
+</div>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
+  <div class="form-group lead">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group lead">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
+    <div class="form-group lead">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end -%>
 
-  <div class="actions">
+  <div class="actions lead">
     <%= f.submit "Log in" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

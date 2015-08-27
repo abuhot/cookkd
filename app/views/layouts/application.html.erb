@@ -12,6 +12,12 @@
     body {
       padding-top: 60px;
     }
+    .background
+    {background-image: url(http://www.bilhana.com/images/backgrounds/shutterstock_95892448.jpg);
+    background-repeat:no-repeat;/*we want to have one single image not a repeated one*/
+   background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+   }
+
   </style>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -40,10 +46,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/friends">Friends</a></li>
-          <li><a href="/favorites">Favorites</a></li>
           <li><a href="/recipes">Recipes</a></li>
-          <li><a href="/rails/info">Sitemap</a></li>
+          <li><a href="/favorites">Favorites</a></li>
+          <li><a href="/friends">Friends</a></li>
+           <!--<li><a href="/rails/info">Sitemap</a></li> -->
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

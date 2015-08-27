@@ -24,7 +24,7 @@
           Friend
         </label>
 
-        <%= select_tag :friend_id, options_from_collection_for_select(User.all.order("lastname ASC"), :id, :lastname), :class => "form-control" %>
+        <%= select_tag :friend_id, options_from_collection_for_select(User.all.order("lastname ASC"), :id, :fullname), :class => "form-control" %>
       </div>
 
        <!-- Label and input for user_id -->
