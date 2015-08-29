@@ -54,6 +54,10 @@
 
         <% favorite = current_user.favorites.find_by(:recipe_id => recipe.id) %>
 
+        <% if params[:id].present? %>
+
+        <% else %>
+
         <% if favorite.present?  %>
 
             <a href="/delete_favorite/<%= favorite.id %>" class="btn btn-danger" rel="nofollow">
@@ -77,7 +81,7 @@
               </button>
             </form>
 
-
+            <% end %>
            <% end %>
         </td>
 
